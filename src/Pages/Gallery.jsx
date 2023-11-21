@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Item from '../Components/Items/Item'
 import './Pages.css'
 
-const Gallery = ({list}) => {
+const Gallery = ({list, addToCart}) => {
   const [fl, setFl] = useState([]);
   useEffect(() => {
     if(list) setFl([...list]);
@@ -18,7 +18,8 @@ const Gallery = ({list}) => {
                             price={item.price} 
                             offer={item.offer} 
                             delivery={item.delivery}
-                            size={item.size}/>)}
+                            size={item.size}
+                            handleClick={() => addToCart(item)}/>)}
       </div>
     </main>
   )

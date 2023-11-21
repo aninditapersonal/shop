@@ -3,7 +3,7 @@ import shop_logo from '../../Assets/shop_logo.webp'
 import cart_logo from '../../Assets/cart_logo.jpg'
 import {MdSearch} from 'react-icons/md'
 
-function Navbar({index, setIndex, search, setSearch}) {
+function Navbar({index, setIndex, search, setSearch, cart}) {
   return (
     <header className="navbar">
         <div className="nav-logo">
@@ -22,9 +22,9 @@ function Navbar({index, setIndex, search, setSearch}) {
         </div>
         <div className="nav-login-cart">
             <button>Login</button>
-            <div className="cart">
+            <div className="cart-button" onClick={() => setIndex(4)}>
               <img src={cart_logo} alt="" />
-              <div className="nav-cart-count">0</div>
+              <div className="nav-cart-count">{cart.length}</div>
             </div>
         </div>
     </header>

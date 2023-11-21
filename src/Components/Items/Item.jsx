@@ -1,7 +1,7 @@
 import React from 'react'
 import './Item.css'
 
-const Item = ({name, image, price, offer, delivery, size}) => {
+const Item = ({name, image, price, offer, delivery, size, handleClick}) => {
   return (
     <div className="item">
         <div className="item-logo">
@@ -18,7 +18,7 @@ const Item = ({name, image, price, offer, delivery, size}) => {
             <p className='delivery'>{delivery === 0?'Free delivery':`Rs. ${delivery} extra for delivery`}</p>
         </div>
         <div className="item-button">
-            <button className='secondary'>Add to cart</button>
+            <button className='secondary' onClick={handleClick}>Add to cart</button>
             <button className='primary'>Buy now</button>
         </div>
     </div>
