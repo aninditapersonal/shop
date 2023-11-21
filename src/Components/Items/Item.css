@@ -1,0 +1,82 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 3px 0 gray;
+}
+.item-logo img{
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+.item-details {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.item-details .item-name {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+    height: 48px;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.item-details .price {
+    font-size: 14px;
+}
+.item-details .price .original {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 6px;
+    text-decoration: line-through red;
+}
+.item-details .price .sale {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 6px;
+    color: blue;
+}
+.item-details .discount {
+    font-size: 14px;
+}
+.item-details .discount span {
+    font-size: 18px;
+    font-weight: bold;
+    color: blue;
+}
+.item-details .delivery{
+    font-size: 14px;
+}
+.item-button{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 12px;
+    margin-bottom: 12px;
+}
+.item-button .primary, .item-button .secondary{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 6px 8px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 1px 0;
+    cursor: pointer;
+}
+.item-button .primary {
+    background-color: blue;
+    color: white;
+}
+.item-button .secondary{
+    background-color: gray;
+    color: white;
+}
