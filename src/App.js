@@ -11,12 +11,34 @@ function App() {
   const [search, setSearch] = useState("");
   const [cart, setCart] = useState([]);
 
-  const addToCart = (item) => {
-    const obj = {
-      item: item,
-      quantity: 1,
+  const removeFromCart = (item) => {
+    const temp = cart.filter((c) => c.item.id === item.id);
+    if (temp.length > 0) {
+      const obj = temp[0];
+      if (obj.quantity > 1) {
+        obj.quantity -= 1;
+        setCart([...cart]);
+      }
+      else {
+        const newCart = cart.filter((c) => c.item.id !== item.id);
+        setCart([...newCart]);
+      }
     }
-    setCart([...cart, obj]);
+  }
+
+  const addToCart = (item) => {
+    const temp = cart.filter((c) => c.item.id === item.id);
+    if (temp.length > 0){
+      temp[0].quantity += 1;
+      setCart([...cart])
+    }
+    else {
+      const obj = {
+        item: item,
+        quantity: 1,
+      }
+      setCart([...cart, obj]);
+    }
   }
 
   return (
@@ -27,7 +49,7 @@ function App() {
         pageIndex === 1 ? <Gallery addToCart={addToCart} list={items.filter((item) => item.category === 'MEN' && item.name.toLowerCase().includes(search.toLowerCase()))} /> :
         pageIndex === 2 ? <Gallery addToCart={addToCart} list={items.filter((item) => item.category === 'WOMEN' && item.name.toLowerCase().includes(search.toLowerCase()))} /> :
         pageIndex === 3 ? <Gallery addToCart={addToCart} list={items.filter((item) => item.category === 'KIDS' && item.name.toLowerCase().includes(search.toLowerCase()))} /> :
-        pageIndex === 4 ? <Cart cart={cart}/> :
+        pageIndex === 4 ? <Cart cart={cart} setCart={setCart} addToCart={addToCart} removeFromCart={removeFromCart}/> :
         <></>
       }
       <Footer/>

@@ -2,7 +2,7 @@ import React from 'react'
 import './Item.css'
 import { MdAdd, MdRemove} from "react-icons/md";
 
-const CartItem = ({name, image, price, offer, delivery, size}) => {
+const CartItem = ({name, image, price, offer, delivery, size, quantity, plusHandle, minusHandle}) => {
   return (
     <div className="cart-item">
         <div className="item-logo">
@@ -22,15 +22,15 @@ const CartItem = ({name, image, price, offer, delivery, size}) => {
             <div className="extra">
                 <p>Quantity</p>
                 <div className="quantity">
-                    <MdRemove className='quantity-button n'/>
-                    <span className='quantity-count'>1</span>
-                    <MdAdd className='quantity-button p'/>
+                    <MdRemove className='quantity-button n' onClick={minusHandle}/>
+                    <span className='quantity-count'>{quantity}</span>
+                    <MdAdd className='quantity-button p' onClick={plusHandle}/>
                 </div>
             </div>
             <div className="extra">
                 <h4>Subtotal</h4>
                 <p className="price">
-                    <span className='original'>{price}.00</span>
+                    <span className='sale'>{quantity*Math.ceil(price-(price*offer/100))}.00</span>
                 </p>
             </div>
         </div>

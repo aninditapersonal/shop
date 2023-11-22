@@ -32,13 +32,13 @@
 .item-details .price {
     font-size: 14px;
 }
-.item-details .price .original {
+.price .original {
     font-size: 16px;
     font-weight: bold;
     margin: 0 6px;
     text-decoration: line-through red;
 }
-.item-details .price .sale {
+.price .sale {
     font-size: 18px;
     font-weight: bold;
     margin: 0 6px;
@@ -120,6 +120,7 @@
     height: 24px;
     width: 24px;
     padding: 4px;
+    cursor: pointer;
 }
 .quantity-count {
     padding: 0 4px;

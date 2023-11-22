@@ -18,8 +18,7 @@ const Item = ({name, image, price, offer, delivery, size, handleClick}) => {
             <p className='delivery'>{delivery === 0?'Free delivery':`Rs. ${delivery} extra for delivery`}</p>
         </div>
         <div className="item-button">
-            <button className='secondary' onClick={handleClick}>Add to cart</button>
-            <button className='primary'>Buy now</button>
+            <button className='primary' onClick={handleClick}>Add to cart</button>
         </div>
     </div>
   )

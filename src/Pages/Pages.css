@@ -85,4 +85,5 @@ footer .foot-left, footer .foot-right {
     box-shadow: 0 0 5px 0;
     font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
 }

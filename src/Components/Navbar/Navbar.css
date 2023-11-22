@@ -79,6 +79,7 @@
 }
 .nav-login-cart .cart-button{
     position: relative;
+    cursor: pointer;
 }
 .search{
     border-radius: 50px;

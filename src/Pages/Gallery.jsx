@@ -19,7 +19,8 @@ const Gallery = ({list, addToCart}) => {
                             offer={item.offer} 
                             delivery={item.delivery}
                             size={item.size}
-                            handleClick={() => addToCart(item)}/>)}
+                            handleClick={() => addToCart(item)}
+                            />)}
       </div>
     </main>
   )
